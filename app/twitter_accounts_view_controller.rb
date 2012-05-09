@@ -1,4 +1,6 @@
 class TwitterAccountsViewController < UITableViewController
+  CellIdentifier = 'AccountCell'
+  
   def viewDidLoad
     @accounts = []
 
@@ -11,8 +13,8 @@ class TwitterAccountsViewController < UITableViewController
   end
 
   def tableView(tv, cellForRowAtIndexPath: indexPath)
-    cell = tv.dequeueReusableCellWithIdentifier(:accountCell) || begin
-      UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: :accountCell)
+    cell = tv.dequeueReusableCellWithIdentifier(CellIdentifier) || begin
+      UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: CellIdentifier)
     end
 
     cell.textLabel.text = @accounts[indexPath.row].username
