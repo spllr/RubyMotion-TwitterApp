@@ -34,7 +34,7 @@ class TwitterHomeTimelineViewController < UITableViewController
 
   def viewWillDisappear(animated)
     @timer.invalidate
-    @times = nil
+    @timer = nil
     navigationController.setToolbarHidden(true, animated: animated)
   end
 
